@@ -1,0 +1,189 @@
+@import "tailwindcss";
+@theme {
+  --color-neutralSilver: #f5f7fa;
+  --color-neutralDGray: #4d4d4d;
+  --color-brandPrimary: #4caf4f;
+  --color-neutralGray: #717171;
+  --color-gray900: #17191f;
+  --color-primaryColor: #cddef1;
+  --color-secondaryColor: #141633;
+  --color-blackColor: #030303;
+  --color-lightGrayColor: #e4e4e4;
+  --color-grayColor: #6b7688;
+  --color-brownColor: #46364a;
+  --color-whiteColor: #ffffff;
+  --color-purpleColor: #410036;
+  --color-transparentColor: #878787ba;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  @apply bg-neutralSilver;
+}
+
+header {
+  z-index: 1001 !important;
+}
+.btn-primary {
+  @apply px-7 py-2 bg-red-500 text-white rounded hover:bg-neutralDGray transition-all duration-300 hover:-translate-y-4;
+}
+.btn-secondary {
+  @apply px-7 py-2 bg-gray-500 text-white rounded hover:bg-red-500 transition-all duration-300 hover:-translate-y-4;
+}
+
+.bg-image {
+  transform: scale(1);
+  animation: zoom 0.7s ease;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*Caroussel animation*/
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 1s ease-out;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out;
+}
+.app__footer {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.app__footer-cards {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 4em 2rem 2rem;
+
+  .app__footer-card {
+    min-width: 390px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #d3fde8;
+
+    transition: all 0.3s ease-in-out;
+
+    img {
+      width: 40px;
+      height: 40px;
+      margin: 0 0.7rem;
+    }
+
+    p {
+      font-weight: 500;
+    }
+    a {
+      text-decoration: none;
+      font-weight: 500;
+    }
+    &:hover {
+      box-shadow: 0 0 25px #fef4f5;
+    }
+
+    @media screen and (max-width: 450px) {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.app__footer-cards .app__footer-card:last-child {
+  background-color: #f2f7fb;
+}
+
+.app__footer-cards .app__footer-card:last-child:hover {
+  box-shadow: 0 0 25px #f2f7fb;
+}
+
+.app__footer-form {
+  width: 50%;
+  flex-direction: column;
+  margin: 1rem 2rem;
+
+  div {
+    width: 100%;
+
+    margin: 0.75rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #b4ffd3;
+
+    transition: all 0.3s ease-in-out;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.95rem;
+      border: none;
+      border-radius: 7px;
+      background-color: #cdf1dc;
+
+      font-family: var(--font-base);
+      color: #b9ffc2;
+      outline: none;
+    }
+
+    textarea {
+      height: 170px;
+    }
+
+    &:hover {
+      box-shadow: 0 0 25px #cddef1;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
