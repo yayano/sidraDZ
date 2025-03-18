@@ -1,12 +1,21 @@
 "use client";
-import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import logo from "@/app/assets/logo.svg";
+import { QrCode, WhatsAppLogo } from "@/app/constants/index";
+import Image from "next/image";
 export default function MyHome() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    setShow(false);
+    console.log("useEffect");
+  }, []);
   return (
     <div className="bg-neutralSilver mt-2 mb-4" id="home">
-      <div className="px-4 lg:mb-20 lg:px-14 max-w-screen-2x1 mx-auto  min-h-screen h-screen ">
+      <div
+        className={`px-4 lg:mb-20 lg:px-14 max-w-screen-2x1 mx-auto  min-h-screen h-screen ${
+          show ? "opacity-60" : ""
+        }`}
+      >
         <div className="flex h-full items-center justify-center ">
           <div className="relative w-screen h-screen overflow-hidden">
             <video
@@ -19,16 +28,16 @@ export default function MyHome() {
               <source src="/video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <div className="relative z-10 flex items-center justify-center w-full h-full bg-black/50 ">
-              <div className="hero md:w-1/2 absolute z-100 bg-transparentColor rounded-xl p-4 left-8">
-                <h1 className="text-3xl font-bold mb-4 text-neutralDGrey md:w-3/4 leading-snug p-6 mt-8">
+            <div className=" relative z-10 flex items-center  justify-center w-full h-full bg-black/50 ">
+              <div className="hero md:w-1/2 absolute z-100  bg-transparentColor rounded-xl p-4 m-2 md:left-8">
+                <h1 className=" text-xl md:text-xl lg:text-3xl font-bold mb-4 text-neutralDGrey md:w-3/4 leading-snug p-6 mt-8">
                   Votre Partenaire de Confiance
-                  <span className="text-white leading-snug block p-2 text-2xl">
+                  <span className="text-white leading-snug block p-2 text-base">
                     pour l'Exportation de Produits à Base de Calcium.
                   </span>
                 </h1>
 
-                <p className="text-white text-justify text-base mb-8 p-4  ">
+                <p className="text-white text-justify text-xs  lg:text-base  mb-8 p-4  ">
                   Spécialistes dans l’extraction, la transformation et
                   l’exportation de produits minéraux riches en calcium, nous
                   mettons à votre disposition des solutions adaptées aux besoins
@@ -50,8 +59,13 @@ export default function MyHome() {
                       Découvrez nos produits
                     </button>
                   </Link>
-                  <Link to="products" spy={true} smooth={true}>
-                    <button className="btn-secondary">Demander un devis</button>
+                  <Link to="/" spy={true} smooth={true}>
+                    <button
+                      className="btn-secondary"
+                      onClick={() => setShow(true)}
+                    >
+                      Demander un devis
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -79,6 +93,63 @@ export default function MyHome() {
           </div>
         </div>
       </div>
+      {show && (
+        <div className="z-9999 fixed inset-0 bg-transparent bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center opacity-100">
+          <div className="p-8 border w-full md:w-1/2 lg:w-1/3  shadow-lg rounded-md bg-white relative">
+            <div className="text-left ">
+              <h3 className="text-2xl font-bold text-red-500 p-3  ">
+                Contactez-nous
+              </h3>
+              {/* Navigates back to the base URL - closing the modal */}
+              <button
+                onClick={() => setShow(false)}
+                className="px-4 py-2 bg-transparent border-2 border-red-500 absolute right-2 top-2 text-red-500 text-2xl  font-bold rounded-full shadow-sm  focus:outline-none focus:ring-2 focus:ring-gray-300"
+              >
+                X
+              </button>
+
+              <div className="mt-2 px-7 py-3 text-gray-500">
+                <p className="text-lg p-1">
+                  Pour obtenir un devis précis, veuillez fournir le numéro CAS,
+                  la quantité requise et les exigences de qualité du produit.
+                </p>
+                <h4 className="text-lg p-1 font-bold ">
+                  Contact : <span className="font-normal">0770-809-485</span>
+                </h4>
+                <h4 className="text-lg p-1 font-bold ">
+                  WhatsApp : <span className="font-normal">0770-809-485</span>
+                </h4>
+                <h4 className="text-lg p-1 font-bold ">
+                  Email : <span className="font-normal">0770-809-485</span>
+                </h4>
+                <h4 className="text-lg p-1 font-bold ">
+                  Address :{" "}
+                  <span className="font-normal">
+                    OUEDI EL MAIZ CITE 54 COOPERATIF PROMOTIONELLE B 06 MAGAZIN
+                    N 03 WILAYA DE GUELMA - ALGERIE
+                  </span>
+                </h4>
+                <div className="p-4 bg-gray-400">
+                  <p className="text-black font-semibold">
+                    N'hésitez pas à nous écrire sur WhatsApp pour une assistance
+                    immédiate !
+                  </p>
+                  <Image src={WhatsAppLogo} alt="whatsapp" />
+                </div>
+                <div className="p-4 bg-gray-400 flex justify-center items-center">
+                  <p className="text-black font-semibold p-2">
+                    Si vous utilisez WhatsApp !
+                  </p>
+                  <Image src={QrCode} alt="whatsapp" />
+                </div>
+              </div>
+              <div className="flex justify-center mt-4">
+                <p>Merci!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

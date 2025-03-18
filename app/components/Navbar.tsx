@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import { FaXmark, FaBars } from "react-icons/fa6";
 import Image from "next/image";
 import logo from "@/app/assets/logo.svg";
+
 export default function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,8 +35,8 @@ export default function Navbar() {
   const navItems = [
     { link: "Acceuil", path: "home" },
     { link: "A Propos", path: "about" },
-    { link: "Produits", path: "products" },
     { link: "Services", path: "services" },
+    { link: "Produits", path: "products" },
     { link: "Aide", path: "help" },
     { link: "Contact", path: "contact" },
   ];
@@ -81,10 +82,10 @@ export default function Navbar() {
           </ul>
 
           {/* menu btn for mobile devices */}
-          <div className="md:hidden ">
+          <div className="md:hidden p-2 ">
             <button
               onClick={toggleMenu}
-              className="text-neutralDGray focus:outline-none focus:text-gray-500"
+              className="text-white focus:outline-none focus:text-white"
             >
               {isMenuOpen ? (
                 <FaXmark className="h-6 w-6 " />
@@ -97,7 +98,7 @@ export default function Navbar() {
 
         {/* nav items for mobile devices */}
         <div
-          className={`space-y-4 px-4 mt-16 py-7 bg-red-500 ${
+          className={`space-y-4 px-4 mt-16 py-10 ml-3 bg-red-500 ${
             isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"
           }`}
         >

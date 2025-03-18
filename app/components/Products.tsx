@@ -6,7 +6,7 @@ export default function Products() {
   return (
     <div className="products" id="#products">
       <div className="mt-20 md:w-1/2 mx-auto text-center">
-        <h2 className="text-4xl text-neutralGray font-semibold mb-3 ">
+        <h2 className="text-4xl text-red-500 font-semibold mb-3 ">
           Nos Produits
         </h2>
         <p className="text-neutralGray">
@@ -32,6 +32,7 @@ export default function Products() {
                 className="object-cover w-full"
                 src={product.image[0]}
                 alt="product image"
+                priority={false}
               />
             </Link>
             <div className="mt-4 px-5 pb-5">
@@ -41,12 +42,6 @@ export default function Products() {
                 </h5>
               </Link>
               <div className="mt-2 mb-5 flex items-center justify-between">
-                <p>
-                  <span className="text-m font-bold text-slate-900">
-                    C.Alimentaire
-                  </span>
-                  <span className="text-sm text-slate-900 line-through"></span>
-                </p>
                 <div className="flex items-center">
                   <svg
                     aria-hidden="true"

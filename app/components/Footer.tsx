@@ -5,23 +5,21 @@ import Image from "next/image";
 import { BsFacebook, BsInstagram, BsTiktok, BsTwitter } from "react-icons/bs";
 export default function zMyFooter() {
   return (
-    <Footer container id="help" className="bg-purpleColor ">
+    <Footer container id="help" className="bg-red-500 rounded-none ">
       <div className="w-full ">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
-            <Footer.Brand href="/" src={logo} alt="Lilfat Logo" name="Lilfat" />
+            <Image width={100} height={100} src={logo} alt="Lilfat Logo" />
           </div>
           <div className="grid grid-cols-3 gap-8 sm:mt-4 sm:grid-cols-4 sm:gap-6">
             <div>
               <Footer.Title title="about" className="text-white" />
               <Footer.LinkGroup col className="text-white">
                 <Footer.Link href="#" className="text-white">
-                  Lilfat
+                  EURL SIDRA DZ
                 </Footer.Link>
-                <Footer.Link href="#">Produit alimentaire</Footer.Link>
-                <Footer.Link href="#">
-                  22 Rue sidi moussa Boufarik w-blida
-                </Footer.Link>
+                <Footer.Link href="#">Société d'exportation</Footer.Link>
+                <Footer.Link href="#">ouedi el maiz Guelma Algérie</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
@@ -39,19 +37,16 @@ export default function zMyFooter() {
               <Footer.Title title="Contact" className="text-white" />
               <Footer.LinkGroup col>
                 <Footer.Link href="#" className="text-white">
-                  djoudicompany@lilfatdc.com
+                  merouane@sidradz.com
                 </Footer.Link>
                 <Footer.Link href="#" className="text-white">
-                  chems05djoudi@gmail.com
+                  merouane@gmail.com
                 </Footer.Link>
                 <Footer.Link href="#" className="text-white">
-                  0660-836-783
+                  0770-809-485
                 </Footer.Link>
                 <Footer.Link href="#" className="text-white">
-                  0675-901-656
-                </Footer.Link>
-                <Footer.Link href="#" className="text-white">
-                  0559-106-703
+                  0770-809-485
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
@@ -68,7 +63,7 @@ export default function zMyFooter() {
             </div>
           </div>
         </div>
-        <Footer.Divider />
+        <Footer.Divider className="m-2" />
         <div className="w-full sm:flex sm:items-center sm:justify-between text-white">
           <Footer.Copyright
             href="#"
