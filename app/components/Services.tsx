@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import { ServiceItems } from "../constants";
 export default function Services() {
   return (

@@ -1,9 +1,9 @@
 "use client";
-import React, { FormEvent, useRef } from "react";
-import emailjs from "@emailjs/browser";
+
+//import emailjs from "@emailjs/browser";
 import Addresse from "./Addresse";
 export default function Contact() {
-  const form = useRef({});
+  // const form = useRef({});
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

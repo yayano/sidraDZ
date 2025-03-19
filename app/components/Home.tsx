@@ -33,7 +33,7 @@ export default function MyHome() {
                 <h1 className=" text-xl md:text-xl lg:text-3xl font-bold mb-4 text-neutralDGrey md:w-3/4 leading-snug p-6 mt-8">
                   Votre Partenaire de Confiance
                   <span className="text-white leading-snug block p-2 text-base">
-                    pour l'Exportation de Produits à Base de Calcium.
+                    pour l&apos;Exportation de Produits à Base de Calcium.
                   </span>
                 </h1>
 
@@ -131,8 +131,8 @@ export default function MyHome() {
                 </h4>
                 <div className="p-4 bg-gray-400">
                   <p className="text-black font-semibold">
-                    N'hésitez pas à nous écrire sur WhatsApp pour une assistance
-                    immédiate !
+                    N&apos;hésitez pas à nous écrire sur WhatsApp pour une
+                    assistance immédiate !
                   </p>
                   <Image src={WhatsAppLogo} alt="whatsapp" />
                 </div>

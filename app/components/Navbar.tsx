@@ -51,8 +51,8 @@ export default function Navbar() {
       >
         {/* nav items for large devices */}
         <div className="flex justify-between items-center text-base gap-8">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-2x1 font-semibold flex items-center space-x-3 "
           >
             <Image
@@ -60,7 +60,7 @@ export default function Navbar() {
               alt="logo"
               className="w-30 inline-block items-center m-2  "
             />{" "}
-          </a>
+          </Link>
           {/* nav links for large devices */}
           <ul className="hidden md:flex space-x-12 m-2  ">
             {navItems.map(({ link, path }) => (

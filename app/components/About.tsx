@@ -9,20 +9,20 @@ export default function About() {
       <div className="px-4 lg:px-14 max-w-screen-2xl mx-auto my-25  z-999">
         <div className="md:w-11/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="md:w-3/5 mx-auto">
-            <h2 className="text-4xl text-neutralDGray font-semibold mb-4 md:w-4/5 text-red-500">
+            <h2 className="text-4xl  font-semibold mb-4 md:w-4/5 text-red-500">
               À Propos de Nous
             </h2>
             <p className="md:w-4/5 text-sm text-neutralDGray mb-8 ">
               Depuis notre création, nous nous engageons à fournir des minéraux
               de haute qualité aux marchés internationaux. Spécialisés dans
-              l’exportation du calcium et d'autres minéraux essentiels, nous
-              garantissons des produits conformes aux normes les plus strictes
-              en matière de pureté et de performance. Grâce à une expertise
-              approfondie et un réseau logistique optimisé, nous assurons une
-              livraison fiable et rapide à travers le monde. Notre mission est
-              d’accompagner nos clients avec des solutions sur mesure adaptées à
-              leurs besoins industriels, tout en respectant les normes
-              environnementales et de durabilité.
+              l&apos;exportation du calcium et d'autres minéraux essentiels,
+              nous garantissons des produits conformes aux normes les plus
+              strictes en matière de pureté et de performance. Grâce à une
+              expertise approfondie et un réseau logistique optimisé, nous
+              assurons une livraison fiable et rapide à travers le monde. Notre
+              mission est d&apos;accompagner nos clients avec des solutions sur
+              mesure adaptées à leurs besoins industriels, tout en respectant
+              les normes environnementales et de durabilité.
             </p>
             <ul className="block p-2 ">
               <li className="p-2">

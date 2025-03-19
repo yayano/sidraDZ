@@ -18,7 +18,7 @@ export default function zMyFooter() {
                 <Footer.Link href="#" className="text-white">
                   EURL SIDRA DZ
                 </Footer.Link>
-                <Footer.Link href="#">Société d'exportation</Footer.Link>
+                <Footer.Link href="#">Société d&apos;exportation</Footer.Link>
                 <Footer.Link href="#">ouedi el maiz Guelma Algérie</Footer.Link>
               </Footer.LinkGroup>
             </div>
