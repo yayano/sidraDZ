@@ -15,10 +15,10 @@ export default function About() {
             <p className="md:w-4/5 text-sm text-neutralDGray mb-8 ">
               Depuis notre création, nous nous engageons à fournir des minéraux
               de haute qualité aux marchés internationaux. Spécialisés dans
-              l&apos;exportation du calcium et d'autres minéraux essentiels,
-              nous garantissons des produits conformes aux normes les plus
-              strictes en matière de pureté et de performance. Grâce à une
-              expertise approfondie et un réseau logistique optimisé, nous
+              l&apos;exportation du calcium et d&apos;autres minéraux
+              essentiels, nous garantissons des produits conformes aux normes
+              les plus strictes en matière de pureté et de performance. Grâce à
+              une expertise approfondie et un réseau logistique optimisé, nous
               assurons une livraison fiable et rapide à travers le monde. Notre
               mission est d&apos;accompagner nos clients avec des solutions sur
               mesure adaptées à leurs besoins industriels, tout en respectant
