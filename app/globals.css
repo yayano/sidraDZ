@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss/index.css";
 @theme {
   --color-neutralSilver: #f5f7fa;
   --color-neutralDGray: #4d4d4d;
