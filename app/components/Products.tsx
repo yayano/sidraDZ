@@ -1,5 +1,6 @@
 "use client";
-import { Link } from "react-scroll";
+import { Link as ReactLink } from "react-scroll";
+import Link from "next/link";
 import { ProductsItems } from "@/app/constants/index";
 import Image from "next/image";
 export default function Products() {
@@ -24,7 +25,7 @@ export default function Products() {
             key={product.id}
             className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
           >
-            <Link
+            <ReactLink
               className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
               to={`${product.name}`}
             >
@@ -34,13 +35,13 @@ export default function Products() {
                 alt="product image"
                 priority={false}
               />
-            </Link>
+            </ReactLink>
             <div className="mt-4 px-5 pb-5">
-              <Link to={`${product.name}`}>
+              <ReactLink to={`${product.name}`}>
                 <h5 className="text-xl tracking-tight text-slate-900">
                   {product.name}
                 </h5>
-              </Link>
+              </ReactLink>
               <div className="mt-2 mb-5 flex items-center justify-between">
                 <div className="flex items-center">
                   <svg
@@ -100,7 +101,7 @@ export default function Products() {
                 {product.description}
               </p>
               <Link
-                to={`${product.name}`}
+                href={`/product/${product.id}`}
                 className="flex items-center justify-center cursor-pointer rounded-md bg-red-500 px-5 py-2.5 
                 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none 
                 focus:ring-4 focus:ring-blue-300"

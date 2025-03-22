@@ -30,6 +30,13 @@ import product11 from "../assets/200_vrac.png";
 import product12 from "../assets/200_bb.png";
 import product13 from "../assets/150_vrac.png";
 import product14 from "../assets/150_bb.png";
+
+import bexCarb10N from "../assets/fiches tecnique/bexcarb10N.jpg";
+import bexCarb5N from "../assets/fiches tecnique/bexcarb5N.jpg";
+import bexCarb2N from "../assets/fiches tecnique/bexcarb2N.jpg";
+import bexCarb150 from "../assets/fiches tecnique/bexcarb150.jpg";
+import bexCarb2T from "../assets/fiches tecnique/bexcarb2T.jpg";
+import bexCarb50 from "../assets/fiches tecnique/bexcarb50.jpg";
 export const ServiceItems = [
   {
     id: 1,
@@ -130,19 +137,19 @@ export const ServiceItems = [
 export const ProductsItems = [
   {
     id: 1,
-    name: "2N TRAITE",
+    name: "BexCarb2T",
     application: "Utilisé pour le traitement et le raffinage du calcium.",
     description:
       "Un produit de haute pureté destiné aux industries nécessitant un calcium traité de qualité.",
-    image: [product0],
+    image: [product0, bexCarb2T, product0],
   },
   {
     id: 2,
-    name: "2N SAC",
+    name: "BexCarb2N",
     application: "Convient pour l’agriculture et l’industrie chimique.",
     description:
       "Un produit conditionné en sacs pour faciliter son transport et son stockage.",
-    image: [product2],
+    image: [product2, bexCarb2N],
   },
   {
     id: 3,
@@ -154,11 +161,11 @@ export const ProductsItems = [
   },
   {
     id: 4,
-    name: "5N SAC",
+    name: "Bexcarb5N",
     application: "Industriel et chimique.",
     description:
       "Produit raffiné, emballé en sacs pour répondre aux exigences de précision.",
-    image: [product7],
+    image: [product7, bexCarb5N],
   },
   {
     id: 5,
@@ -170,11 +177,11 @@ export const ProductsItems = [
   },
   {
     id: 6,
-    name: "10N SAC",
+    name: "Bexcarb 10N ",
     application: "Industrie pharmaceutique et chimique.",
     description:
       "Produit de grande pureté conditionné en sacs pour un usage spécifique.",
-    image: [product5],
+    image: [product5, bexCarb10N],
   },
   {
     id: 7,
@@ -201,19 +208,19 @@ export const ProductsItems = [
   },
   {
     id: 10,
-    name: "50 BB",
+    name: "BexCarb50 BB",
     application: "Industrie des matériaux de construction.",
     description:
       "Produit emballé en big bag de 50 unités pour des besoins en grande quantité.",
-    image: [product6],
+    image: [product6, bexCarb50],
   },
   {
     id: 11,
-    name: "150 BB",
+    name: "BexCarb150 BB",
     application: "Production industrielle et chimie lourde.",
     description:
       "Produit en big bag de 150 unités pour optimiser la logistique.",
-    image: [product14],
+    image: [product14, bexCarb150],
   },
   {
     id: 12,
