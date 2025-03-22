@@ -22,17 +22,7 @@ export default function zMyFooter() {
                 <Footer.Link href="#">ouedi el maiz Guelma Algérie</Footer.Link>
               </Footer.LinkGroup>
             </div>
-            <div>
-              <Footer.Title title="Follow us" className="text-white" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#" className="text-white">
-                  Facebook
-                </Footer.Link>
-                <Footer.Link href="#" className="text-white">
-                  Instagram
-                </Footer.Link>
-              </Footer.LinkGroup>
-            </div>
+
             <div>
               <Footer.Title title="Contact" className="text-white" />
               <Footer.LinkGroup col>

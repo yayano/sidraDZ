@@ -41,7 +41,7 @@ export default function Navbar() {
     { link: "Contact", path: "contact" },
   ];
   return (
-    <header className="w-full md:bg-transparent fixed top-0 left-0 right-0">
+    <header className="w-full md:bg-transparent fixed top-0 left-0 right-0 max-w-screen ">
       <nav
         className={`py-1 lg:px-14 px-4 ${
           isSticky
@@ -50,10 +50,10 @@ export default function Navbar() {
         }`}
       >
         {/* nav items for large devices */}
-        <div className="flex justify-between items-center text-base gap-8">
+        <div className="flex justify-between items-center text-base gap-8 ">
           <Link
             to="/"
-            className="text-2x1 font-semibold flex items-center space-x-3 "
+            className="text-2x1  font-semibold flex items-center space-x-3 "
           >
             <Image
               src={logo}
@@ -70,7 +70,7 @@ export default function Navbar() {
                 spy={true}
                 smooth={true}
                 offset={-100}
-                className={`block text-base cursor-pointer p-3 font-semibold hover:text-red-500 first:font-medium m-2 ${
+                className={`block md:text-xs lg:text-base cursor-pointer p-3 font-semibold hover:text-red-500 first:font-medium m-2 ${
                   path === "contact"
                     ? "bg-red-500 hover:text-white hover:bg-transparent border-1 border-red-500 "
                     : ""
@@ -98,8 +98,8 @@ export default function Navbar() {
 
         {/* nav items for mobile devices */}
         <div
-          className={`space-y-4 px-4 mt-16 py-10 ml-3 bg-red-500 ${
-            isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"
+          className={`space-y-4 px-4 mt-16 py-10  bg-red-500 ${
+            isMenuOpen ? "block fixed top-3 right-4 left-4" : "hidden"
           }`}
         >
           {navItems.map(({ link, path }) => (
