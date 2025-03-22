@@ -7,7 +7,6 @@ export default function MyHome() {
   const [show, setShow] = useState(false);
   useEffect(() => {
     setShow(false);
-    console.log("useEffect");
   }, []);
   return (
     <div className="bg-neutralSilver mt-2 overflow-hidden" id="home">

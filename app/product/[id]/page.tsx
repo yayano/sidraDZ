@@ -55,8 +55,8 @@ export default function ProductDetails({ params }: { params: Params }) {
         </div>
 
         <ul className="text-sm space-x-9 mt-3">
-          <p>{application}</p>
-          <p>{description}</p>
+          <li>{application}</li>
+          <li>{description}</li>
         </ul>
         {/* <p>{description}</p> */}
         <Link
