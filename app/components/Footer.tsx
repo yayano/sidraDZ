@@ -2,7 +2,6 @@ import React from "react";
 import { Footer } from "flowbite-react";
 import logo from "../assets/logo.svg";
 import Image from "next/image";
-import { BsFacebook, BsInstagram, BsTiktok, BsTwitter } from "react-icons/bs";
 export default function zMyFooter() {
   return (
     <Footer container id="help" className="bg-red-500 rounded-none ">

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 function getData(id: number) {
-  let data = ProductsItems.filter((data) => data.id == id);
+  const data = ProductsItems.filter((data) => data.id == id);
   return data;
 }
 type Params = {
@@ -58,7 +58,7 @@ export default function ProductDetails({ params }: { params: Params }) {
           <li>{application}</li>
           <li>{description}</li>
         </ul>
-        {/* <p>{description}</p> */}
+
         <Link
           href="/#products"
           className="flex items-center justify-center rounded-md bg-brandPrimary mt-5 px-5 py-2.5 
