@@ -6,26 +6,39 @@ import { BsFacebook, BsInstagram, BsTiktok, BsTwitter } from "react-icons/bs";
 export default function zMyFooter() {
   return (
     <Footer container id="help" className="bg-red-500 rounded-none ">
-      <div className="w-full ">
+      <div className="w-full p-2 ">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
             <Image width={100} height={100} src={logo} alt="Lilfat Logo" />
           </div>
-          <div className="grid grid-cols-3 gap-8 sm:mt-4 sm:grid-cols-4 sm:gap-6">
+          <div className="grid grid-cols-3 gap-3 sm:mt-4 sm:grid-cols-4 sm:gap-3 ">
             <div>
-              <Footer.Title title="about" className="text-white" />
-              <Footer.LinkGroup col className="text-white">
-                <Footer.Link href="#" className="text-white">
+              <Footer.Title
+                title="about"
+                className="text-white text-xs md:text-base"
+              />
+              <Footer.LinkGroup
+                col
+                className="text-white text-xsm sm:text-base"
+              >
+                <Footer.Link href="#" className="text-white ">
                   EURL SIDRA DZ
                 </Footer.Link>
-                <Footer.Link href="#">Société d&apos;exportation</Footer.Link>
-                <Footer.Link href="#">ouedi el maiz Guelma Algérie</Footer.Link>
+                <Footer.Link href="#" className="text-white ">
+                  Société d&apos;exportation
+                </Footer.Link>
+                <Footer.Link href="#" className="text-white ">
+                  ouedi el maiz Guelma Algérie
+                </Footer.Link>
               </Footer.LinkGroup>
             </div>
 
             <div>
-              <Footer.Title title="Contact" className="text-white" />
-              <Footer.LinkGroup col>
+              <Footer.Title
+                title="Contact"
+                className="text-white text-xs md:text-base "
+              />
+              <Footer.LinkGroup col className="text-xsm md:text-base">
                 <Footer.Link href="#" className="text-white">
                   merouane@sidradz.com
                 </Footer.Link>
@@ -41,12 +54,21 @@ export default function zMyFooter() {
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title="Legal" className="text-white" />
+              <Footer.Title
+                title="Legal"
+                className="text-white text-xs md:text-base"
+              />
               <Footer.LinkGroup col>
-                <Footer.Link href="#" className="text-white">
+                <Footer.Link
+                  href="#"
+                  className="text-white text-xsm sm:text-base"
+                >
                   Privacy Policy
                 </Footer.Link>
-                <Footer.Link href="#" className="text-white">
+                <Footer.Link
+                  href="#"
+                  className="text-white text-xsm sm:text-base"
+                >
                   Terms &amp; Conditions
                 </Footer.Link>
               </Footer.LinkGroup>
@@ -61,12 +83,6 @@ export default function zMyFooter() {
             by="Yahia™"
             year={2024}
           />
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center ">
-            <Footer.Icon href="#" className="text-white" icon={BsFacebook} />
-            <Footer.Icon href="#" className="text-white" icon={BsInstagram} />
-            <Footer.Icon href="#" className="text-white" icon={BsTwitter} />
-            <Footer.Icon href="#" className="text-white" icon={BsTiktok} />
-          </div>
         </div>
       </div>
     </Footer>
