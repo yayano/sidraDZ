@@ -1,49 +1,21 @@
-"use client";
+import ImageContainer from "@/app/components/ImageContainer";
 import { ProductsItems } from "../../constants/index";
-import Image from "next/image";
+
 import Link from "next/link";
-import { useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-function getData(id: number) {
-  const data = ProductsItems.filter((data) => data.id == id);
+function getData(id: string) {
+  const data = ProductsItems.filter((data) => data.id.toString() === id);
   return data;
 }
-type Params = {
-  id: number;
-};
-export default function ProductDetails({ params }: { params: Params }) {
-  const [index, setIndex] = useState(0);
-  const { id } = params;
+type Params = Promise<{ id: string }>;
+export default async function ProductDetails({ params }: { params: Params }) {
+  const { id } = await params;
   const data = getData(id);
   const { name, description, image, application } = data[0];
   return (
-    <div className="flex gap-10 m-10 mt-15 flex-wrap ">
-      <div>
-        <div className="image-container">
-          <Image
-            src={image && image[index]}
-            alt="product"
-            className="rounded-2xl bg-[#ebebeb] object-cover w-[400px] h-[400px] pointer transition-all duration-300  hover:bg-[#f02d34]  "
-          />
-        </div>
-        <div className="flex gap-2.5 mt-2.5   ">
-          {image?.map((item, i) => (
-            <Image
-              key={i}
-              src={item}
-              alt="products"
-              onMouseEnter={() => setIndex(i)}
-              className={
-                i === index
-                  ? "small-image rounded-xl  w-17.5 h-17.5 cursor-pointer selected-image bg-[#f02d34]"
-                  : "small-image rounded-xl bg-[#ebebeb] w-17.5 h-17.5 cursor-pointer"
-              }
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="w-[400px]">
+    <div className="flex gap-5 m-10 mt-15 flex-wrap  ">
+      <ImageContainer image={image} />
+      <div className="w-[400px] mt-7">
         <h1>{name}</h1>
         <div className="text-[#f02d34] mt-2.5 flex gap-1.5 items-center   ">
           <AiFillStar />

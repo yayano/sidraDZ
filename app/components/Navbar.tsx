@@ -4,11 +4,19 @@ import { Link } from "react-scroll";
 import { FaXmark, FaBars } from "react-icons/fa6";
 import Image from "next/image";
 import logo from "@/app/assets/logo.svg";
-
+import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isSpecialPathName, setIsSpecialPathName] = useState(false);
+  const pathname = usePathname();
+  const isPathSpecial = (ispathname: string) => {
+    if (ispathname.startsWith("/product")) {
+      setIsSpecialPathName(true);
+    } else {
+      setIsSpecialPathName(false);
+    }
+  };
   //toggle menu opening
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -19,6 +27,7 @@ export default function Navbar() {
   };
   //handle scroll sticky navbar
   useEffect(() => {
+    isPathSpecial(pathname);
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setIsSticky(true);
@@ -41,7 +50,13 @@ export default function Navbar() {
     { link: "Contact", path: "contact" },
   ];
   return (
-    <header className="w-full md:bg-transparent fixed top-0 left-0 right-0 max-w-screen ">
+    <header
+      className={`&& ${
+        isSpecialPathName
+          ? "hidden"
+          : "w-full md:bg-transparent fixed top-0 left-0 right-0 max-w-screen-white"
+      }`}
+    >
       <nav
         className={`py-1 lg:px-14 px-4 ${
           isSticky
@@ -74,7 +89,7 @@ export default function Navbar() {
                   path === "contact"
                     ? "bg-red-500 hover:text-white hover:bg-transparent border-1 border-red-500 "
                     : ""
-                } && ${isSticky ? "text-black" : "text-white"} `}
+                } && ${isSticky ? "text-black" : "text-white"}  `}
               >
                 {link}
               </Link>
