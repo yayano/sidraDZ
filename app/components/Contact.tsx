@@ -1,28 +1,34 @@
 "use client";
-
-//import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import Addresse from "./Addresse";
 export default function Contact() {
-  // const form = useRef({});
+  const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // emailjs
-    //   .sendForm(
-    //     import.meta.env.VITE_HOSTINGER_SERVICE_ID,
-    //     import.meta.env.VITE_HOSTINGER_TEMPLATE_ID,
-    //     form.current,
-    //     {
-    //       publicKey: import.meta.env.VITE_HOSTINGER_PUBLIC_KEY,
-    //     }
-    //   )
-    //   .then(
-    //     () => {
-    //       console.log("success");
-    //       form.current.reset();
-    //     },
-    //     (error) => console.log("Failed", error)
-    //   );
+    if (!form.current || !(form.current instanceof HTMLFormElement)) {
+      console.error("Form reference is null or incorrect type");
+      return;
+    }
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    if (!serviceId || !templateId || !publicKey) {
+      console.log("Misiing EmailJS ENV");
+    } else {
+      emailjs
+        .sendForm(serviceId, templateId, form.current, {
+          publicKey: publicKey,
+        })
+        .then(
+          () => {
+            console.log("success");
+            form.current?.reset();
+          },
+          (error) => console.log("Failed", error)
+        );
+    }
     console.log("submitting");
     return;
   };
@@ -41,7 +47,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <form className="space-y-4 px-8 py-10" onSubmit={sendEmail}>
+        <form className="space-y-4 px-8 py-10" onSubmit={sendEmail} ref={form}>
           <label className="block" htmlFor="name">
             <p className="text-gray-600 text-left">Nom</p>
             <input

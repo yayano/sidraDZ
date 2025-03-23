@@ -4,8 +4,10 @@ import { Link } from "react-scroll";
 import { QrCode, WhatsAppLogo } from "@/app/constants/index";
 import Image from "next/image";
 export default function MyHome() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const [show, setShow] = useState(false);
   useEffect(() => {
+    setVideoLoaded(true);
     setShow(false);
   }, []);
   return (
@@ -17,16 +19,18 @@ export default function MyHome() {
       >
         <div className="flex h-full items-center justify-center ">
           <div className="relative w-screen h-screen overflow-hidden">
-            <video
-              className="absolute top-0 left-0 w-full h-full object-cover opacity-60"
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
-              <source src="/video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            {videoLoaded && (
+              <video
+                className="absolute top-0 left-0 w-full h-full object-cover opacity-60"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
             <div className=" relative z-10 flex items-center  justify-center w-full h-full bg-black/50  ">
               <div className="hero md:w-1/2 absolute z-100  bg-transparentColor rounded-xl md:p-4 p-2 m-2 md:left-8">
                 <h1 className=" text-xl md:text-xl lg:text-3xl font-bold  text-neutralDGrey md:w-3/4 leading-snug md:p-6 mt-8">
